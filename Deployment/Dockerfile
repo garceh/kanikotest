@@ -6,7 +6,7 @@ LABEL TEST=${BuildNumber}
 COPY ./src/ /src/
 COPY ./Deployment/ /deployment/
 
-RUN dotnet restore ./src/KanikoTest.sln --configfile ./deployment/Nuget.Config 
+RUN dotnet restore ./src/KanikoTest.sln
 RUN dotnet build  ./src/KanikoTest.sln
 RUN dotnet publish -c ${Configuration} -o /publish/app  ./src/KanikoTest.sln
 
