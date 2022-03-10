@@ -4,7 +4,7 @@ ARG BuildNumber
 LABEL TEST=${BuildNumber}
 
 COPY ./src/ /src/
-COPY ./deployment/ /deployment/
+COPY ./Deployment/ /deployment/
 
 RUN dotnet restore ./src/KanikoTest.sln --configfile ./deployment/Nuget.Config 
 RUN dotnet build  ./src/KanikoTest.sln
